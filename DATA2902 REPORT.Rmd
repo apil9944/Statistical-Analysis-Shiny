@@ -1,0 +1,571 @@
+---
+title: "DATA2902 Assignment 1: Report"
+author: "490428362"
+date: "Semester 2 2020"
+output: 
+  html_document:
+    theme: cerulean
+    code_folding: hide
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1 Executive Summary
+This report outlines results from data analysis of a given survey. This data explored was collected from a survey of DATA2X02 students enrolled at The University of Sydney during Semester 2 2020. There are approximately 572 people enrolled across the DATA2002 and DATA2902 streams. This survey was voluntary and was made available for completion for a relatively short period of time between 2/9/2020 and 7/9/2020.
+
+#### Tests Conducted
+Three hypothesis tests were conducted:
+
+- **Chi-square goodness of fit test** to determine whether the number of COVID tests follows a Poisson distribution.
+
+- **Chi-square test of independence** to determine if there is any evidence that females have a greater concern for oral hygiene than males.
+
+- **One sample t-test to determine** if the sample mean height of female DATA2X02 students is statistically different from the known mean Australian woman height.
+
+## 2 Data Processing
+Importing necessary libraries.
+```{r, message=FALSE}
+library(tidyverse)
+library(janitor)
+library(skimr)
+library(visdat)
+library(gridExtra)
+library(grid)
+library(lubridate)
+library(sjPlot)
+library(gt)
+library(rsconnect)
+library(knitr)
+library(pander)
+library(visualize)
+```
+
+### 2.1 Data Import
+
+#### 2.1.1 Reading in data
+
+We can read in csv data using `read_csv` from the `readr` package.
+```{r, message=FALSE}
+raw <- readr::read_csv("DATA2X02 class survey 2020 (Responses) - Form responses 1.csv")
+```
+
+### 2.2 Data formatting
+Using `clean_names` from the `janitor` package, we can standardise the formatting of names.
+```{r}
+data <- raw %>% janitor::clean_names()
+```
+
+#### 2.2.1 Manually recoding column names
+Using `colnames` we can manually rename the column names for greater readability as adapted from the code of Tarr (2020).
+```{r}
+colnames(data)[2] = "covid_test"
+colnames(data)[4] = "postcode"
+colnames(data)[5] = "dentist"
+colnames(data)[6] = "university_work"
+colnames(data)[7] = "social_media"
+colnames(data)[8] = "dog_or_cat"
+colnames(data)[9] = "live_with_parents"
+colnames(data)[10] = "exercising"
+colnames(data)[11] = "eye_colour"
+colnames(data)[12] = "have_asthma"
+colnames(data)[13] = "paid_work"
+colnames(data)[14] = "fav_season"
+colnames(data)[15] = "shoe_size"
+colnames(data)[16] = "height"
+colnames(data)[17] = "floss_frequency"
+colnames(data)[18] = "glasses_or_contacts"
+colnames(data)[19] = "dominant_hand"
+colnames(data)[20] = "steak_preference"
+colnames(data)[21] = "stress_level"
+```
+
+### 2.3 Inspecting data
+Using `skim` from the `skimr` package, we can quickly obtain a broad overview of the dataset. Based on R's interpretation of the data, `skimr` provides a useful set of summary statistics that are generated for a variety of different data types (Waring, 2020). 
+```{r}
+skimr::skim(data)
+```
+
+**Observations**
+
+It is interesting to note that responses for postcode had the lowest complete rate (0.90) of all variables, potentially indicating students concerns for privacy when disclosing sensitive information related to their place of residence. Similarly, social media responses had a complete rate of (0.91) with 15 missing responses. Once again, concerns for personal privacy may have been a cause for non-response or potentially indecisiveness amongst students as the question required responders to select their *favourite* social media platform.
+
+
+### 2.4 Data type identification
+Using the `vis_dat` function from the `visdat` package, we can gain an understanding of the different data types and frequency of missing values represented by `NA` as adapted from the code of Tarr (2020).
+```{r, fig.align='center'}
+visdat::vis_dat(data)
+```
+
+## 3 Data cleaning
+Now that we have a preliminary understanding of the different types of data present in this dataset, we can begin to clean the data and standardise values to ensure consistency across the dataset. This data cleaning process was adapted from the code of Tarr (2020) and was applied for both categorical and numerical data types.
+
+### 3.1 Categorical Data
+
+**Time-stamp**
+
+From the `lubrdiate` package, we can use `dmy_hms` to convert the timestamp to a date time object (Spinu, 2020).
+```{r}
+data <- data %>% mutate(
+  timestamp = lubridate::dmy_hms(timestamp)
+)
+```
+
+**Gender**
+
+Given the range of responses for this question, we want to group responses into three main groups: Male, Female and Non-binary. Firstly, we make all values in this column uppercase, before using `stringr::str_sub` to filter by the first letter (Wickham, 2020) for each response to the gender question. Then, we can use `case_when` to define several cases that `gender` will be renamed to.
+```{r}
+data <- data %>% mutate(
+  gender = toupper(gender),
+  gender = stringr::str_sub(gender, start = 1, end = 1),
+  gender = case_when(
+    gender == "F" ~ "Female",
+    gender == "M" ~ "Male",
+    gender == "N" ~ "Non-binary"
+  )
+)
+```
+
+**Postcode** 
+
+From earlier, we identified that postcode is a numeric data type. However, when we consider that postcodes, although numerical by nature, postcodes do not represent some numerical quantity. For example the postcode 4000 in Brisbane, Queensland does not indicate that housing prices in this postcode are twice as expensive than those in postcode 2000 - Sydney, New South Wales. Hence, using the `mutate` function we can convert postcode to a character vector.
+```{r}
+data <- data %>%
+  mutate(postcode = as.character(postcode))
+```
+
+
+For the following variables, we can observe standardised and consistent responses as students selected responses via radio buttons removing the need for excessive cleaning and recoding of responses.
+
+* `dentist`
+* `dog_or_cat`
+* `live_with_parents`
+* `has_asthma`
+* `fav_season`
+* `floss_frequency`
+* `glasses_or_contacts`
+* `steak_preference`
+
+**Dominant hand**
+
+Similar to responses received for the gender question, we want to classify responses into three main categories: Right, Left and Ambidextrous. For sake of simplification, we will rename these responses, filtering by the first letter of each value using `stringr::str_sub`. 
+```{r}
+data <- data %>% mutate(
+  dominant_hand = toupper(dominant_hand),
+  dominant_hand = stringr::str_sub(dominant_hand, start = 1, end = 1),
+  dominant_hand = case_when(
+    dominant_hand == "R" ~ "R",
+    dominant_hand == "L" ~ "L",
+    dominant_hand == "A" ~ "A",
+  )
+)
+```
+
+**Social media**
+
+Numerous variations in spelling and a range of social media platform responses dictated the need for manual recoding of responses. Using the `str_sub` function from `stringr`, we can run equality checks on the first three letters of a response (Wickham, 2020). Then, applying `case_when` allows us to recode responses for consistency in spelling and categorisation. `fct_lump` enables us to lump together levels that meet some criteria into an "other" category (Wickham, 2020).
+```{r, results='hide'}
+data <- data %>% mutate(
+  social_media = toupper(social_media),
+  social_media = stringr::str_sub(social_media, start = 1, end = 3),
+  social_media = case_when(
+    social_media == "FAC" ~ "Facebook",
+    social_media == "INS" ~ "Instagram",
+    social_media == "RED" ~ "Reddit",
+    social_media == "WEC" ~ "WeChat",
+    social_media == "TIK" ~ "TikTok",
+    social_media == "TWI" ~ "Twitter",
+    social_media == "MES" ~ "Messenger",
+    social_media == "YOU" ~ "Youtube",
+    social_media == "4CH" ~ "4Chan",
+    social_media == "SNA" ~ "Snapchat",
+    social_media == "PIN" ~ "Pinterest",
+    social_media == "" ~ "Other"
+  ),
+  social_media = forcats::fct_lump(social_media, n = 6)
+)
+```
+
+
+**Eye colour**
+
+Once again, `fct_lump` enables us to lump together levels that meet some criteria into an "other" category (Wickham, 2020).
+```{r, results='hide'}
+data <- data %>% mutate(
+  eye_colour = tolower(eye_colour),
+  eye_colour = forcats::fct_lump(eye_colour, n = 6)
+)
+```
+
+### 3.2 Numerical Data
+
+Inspecting numerical data, we observe consistency in data types eliminating the need for data type conversions, however there are some extreme values to consider.
+
+**Average hours spent on University work per week**
+
+Using `boxplot` we can observe 3 outliers that will not be included in any analysis.
+```{r, fig.align='center', fig.height=3, fig.width=7}
+boxplot(data$university_work, main = "Mean hours spent on University work weekly during Semester 1", horizontal = TRUE)
+```
+
+**Average hours spent exercising per week**
+
+Similarly, we observe 5 outliers with one extreme value that will not be considered in any analysis of this variable
+```{r, fig.align='center', fig.height=3, fig.width=7}
+boxplot(data$exercising, main = "Mean hours spent on exercising weekly", horizontal = TRUE)
+```
+
+**Shoe size**
+
+Due to variations in international shoe size standards across both men's and women's shoes, there were a range of responses for this question. No attempt was made to standardise responses for `shoe_size` due to the inability to determine measurement standard and gender of respondents.
+
+**Height** 
+
+Recoding of height responses was achieved using the `case_when` function, under the assumption that any values given less than 2.3 were in meters and hence the conversion to centimeters which a majority of responses were provided in.
+```{r}
+data <- data %>%
+  dplyr::mutate(
+    height = dplyr::case_when(
+      height < 2.3 ~ height * 100,
+      TRUE ~ height
+    )
+  )
+```
+
+
+Now that the dataset has been cleaned and formatted as desired, we can use `write.csv` to export the cleaned dataset as a CSV file.
+```{r, result='hide'}
+write.csv(data, "cleaned_data_new.csv")
+```
+
+## 4 Required questions
+
+### 4.1 Is this a random sample of DATA2X02 students?
+
+A random sample is defined as a sample where all items have some chance of selection that can be calculated (McLennan, 2020). This was not the case for this survey, which is an example of self-selected non-probability sampling whereby individuals elect to participate ("Self-selection sampling", 2020) via survey in this case. As a result, there is likely to be a degree of self-selection bias, which can lead to the sample not being representative of the DATA2X02 population as "specific groups in the populations are under‐represented because they have less access to Internet" (Bethlehem, 2010). Hence, this is *not* a random sample of DATA2002 students.
+
+### 4.2 What are the potential biases? Which variables are most likely to be subjected to this bias?
+
+**Non-response bias**
+
+Non-response bias occurs when non-responders from a sample differ in a meaningful way to responders, which can "lead to mistakes in estimating population characteristics based on underrepresentation" (Turk, Heneghan & Nunan, 2020). For example in this survey, students who were unaware of the survey being conducted at the start of Semester 2 may have not participated in this survey or similarly those with less access to Internet (Bethlehem, 2010). As mandatory participation was not enforced, non-response bias is a likely issue in this survey. This is confirmed when comparing the number of survey submissions to number of students enrolled across DATA2X02 during Semester 2 2020
+```{r}
+enrolments = 572
+length(data$timestamp) / enrolments
+```
+indicating approximately a 30% response rate from the cohort. 
+
+Sensitive questions are likely to be subjected to non-response bias such as "Gender" and "Postcode", as respondents may not be willing to disclose such personal information without prior knowledge of how this data will be used. This is confirmed by the comparatively lower `complete_rate` for the variable `gender`(Section 2.3).
+
+**Measurement bias**
+
+Measurement bias factors in the sampling method may influence the data obtained, due to various issues such as misinterpretation of questions or sensitive questions asked. The following variables were most likely to be subjected to this bias.
+
+*Question: How tall are you?*
+
+`height`: There were discrepancies in the data as no standardised unit of measurement was specified for this question. A majority of responses were given in centimeters, however there were several responses submitted assuming the measurement was in meters, a consequence of question misinterpretation and ambiguity.
+
+*Question: What is your shoe size?*
+
+`shoe_size`: Similar to height, with no standardised unit of measurement specified there were a range of responses reflecting different shoe measurement sizes across different countries. Additionally, differences in shoe sizes for men and women across regions may explain the range of responses.
+
+*Question: Gender*
+
+`gender`: This question may be considered to be a sensitive question for some as disclosing gender is a personal concern and may not be openly disclosed. Hence, due to the sensitivity of this question some students chose to not answer this question.
+
+### 4.3 Are there any questions that needed improvement to generate useful data?
+
+*Question: What is your shoe size?*
+
+This question needed significant improvement to generate useful data, in particular specifying the desired shoe size standard by region and whether the shoe size was according to men's or women's standards. Greater specification in this question would minimise the effect of measurement bias.
+
+*Question: How tall are you?* 
+
+With no measurement standard for height specified, there was a range of height responses submitted. Specifying either a metric or imperial measurement system would reduce the effect of measurement bias and generate useful data through standardised measurement.
+
+### 4.4 Does the number of COVID tests follow a Poisson distribution?
+
+#### Chi-squared goodness of fit test
+
+**Rationale**
+
+As we want to test whether the sample is taken from a population with the Poisson distribution, we want to count frequencies for each observed value and compare them to the expected frequencies calculated using expected probabilities from the Poisson distribution (Tarr, 2020). Hence, we use a general chi-squared goodness of fit test.
+
+**Hypothesis:** $H_0$: The number of COVID tests follows a Poisson distribution vs $H_1$: The number of COVID tests does not follow a Poisson distribution.
+
+Constructing a frequency table for COVID tests taken.
+
+```{r}
+y <- c(data$covid_test) %>% na.omit()
+y <- table(y) %>% t()
+knitr::kable(y, caption = "Frequency table", booktabs = TRUE)
+```
+```{r}
+x = append(0:5, c(6,7))
+n = sum(y)
+k = length(y)
+(lam = sum(y * x)/n)
+```
+
+`dpois(x, lambda)` gives the probability of `x` successes in a period when the expected number of events is `lambda`.
+```{r}
+p = dpois(x, lambda = lam)
+p[6] = 1 - sum(p[1:5])
+round(p, 5)
+```
+
+**Assumptions:** The expected frequencies, $e_i = np_i \geq 5$. Observations are independent.
+
+After calculating expected frequencies and checking assumptions, it is evident the assumption is violated from the 4th category onward.
+```{r}
+ey = n * p
+ey >= 5
+```
+
+This means we need to combine adjacent groups to satisfy assumptions. 
+
+```{r}
+(yr = c(y[1:3], sum(y[4:6])))
+(eyr = c(ey[1:3], sum(y[4:6])))
+eyr >= 5
+(pr = c(p[1:3], sum(p[4:6])))
+
+kr = length(yr)
+```
+
+Now, assumptions are satisfied for expected frequencies, noted by `TRUE` in all expected frequencies.
+
+**Test statistic:** $T = \displaystyle \sum_{i}^k\frac{(Y_i - np_i)^2}{np_i}$
+
+**Observed test statistic:**
+
+Calculating the observed test statistic gives $t_0 = 19.31$
+```{r}
+(t0 = sum((yr - eyr)^2/eyr))
+```
+
+**P-value:** $P(T > t_0) = P(\chi^2_{2} > 19.31) = 6.40 \times 10^{-5}$
+```{r}
+(pval = 1 - pchisq(t0, df = (kr - 1 - 1)))
+```
+**Decision**
+
+As the p-value is less than the level of significance ($\alpha = 0.05$), we reject the null hypothesis that the number of COVID tests follows a Poisson distribution
+
+##### 4.4.1 Probability density function $\chi^2$ (2)
+```{r, fig.align='center'}
+d = dist_chisq(chi2 = 19.31, deg.f = 2)
+```
+
+### 4.5 Perform two other hypothesis tests.
+
+#### 4.5.1 Chi-square test of independence
+
+*Q. Is there evidence to suggest that females in DATA2X02 have greater concern for oral hygiene than males?* 
+
+**Rationale**
+
+As we are able to categorise the sample into two or more factors, we are able to test if the factors of classification are independent (Tarr, 2020) - namely gender and time since last dental checkup. According to Medibank member data, Australian women were 18% more likely to seek dental treatments than men in the last 3 years (Medibank, 2016). Hence, we are interested in testing if gender and time since last dental checkup are independent.
+
+**Hypothesis:** $H_0: p_{ij} = p_{i\bullet}p_{j\bullet}, i = 1, 2; j = 1, 2, 3, 4$ vs $H_1:$ Not all equalities hold.
+
+Extracting values using `filter` from `dplyr`.
+```{r, echo = TRUE, results = 'hide'}
+#Males
+p11 = filter(data, gender == "Male", dentist == "Less than 6 months")
+nrow(p11)
+
+p12 = filter(data, gender == "Male", dentist == "Between 6 and 12 months")
+nrow(p12)
+
+p13 = filter(data, gender == "Male", dentist == "Between 12 months and 2 years")
+nrow(p13)
+
+p14 = filter(data, gender == "Male", dentist == "More than 2 years")
+nrow(p14)
+  
+#Females
+p21 = filter(data, gender == "Female", dentist == "Less than 6 months")
+nrow(p21)
+
+p22 = filter(data, gender == "Female", dentist == "Between 6 and 12 months")
+nrow(p22)
+
+p23 = filter(data, gender == "Female", dentist == "Between 12 months and 2 years")
+nrow(p23)
+
+p24 = filter(data, gender == "Female", dentist == "More than 2 years")
+nrow(p24)
+```
+
+Constructing a contingency table for a test of independence.
+```{r}
+y = c(26, 12, 42, 26, 27, 11, 19, 5)
+r = 2
+c = 4
+
+y.mat = matrix(y, nrow = r, ncol = c)
+colnames(y.mat) = c("Less than 6 months", "Between 6 and 12 months","Between 12 months and 2 years" ,"More than 2 years")
+rownames(y.mat) = c("Male", "Female")
+kable(y.mat, align = "cccc") 
+```
+
+Calculating row and column sums 
+```{r, results=FALSE}
+(yr = apply(y.mat, 1, sum)) #Row sums
+(yc = apply(y.mat, 2, sum)) #Col sums
+
+(yr.mat = matrix(yr, r, c, byrow = FALSE))
+(yc.mat = matrix(yc, r, c, byrow = TRUE))
+
+(ey.mat = yr.mat * yc.mat / sum(y.mat))
+```
+
+**Assumptions:** $e_{ij} = y_{i\bullet}y_{j\bullet}/n \geq 5.$
+
+Checking assumptions, which hold true
+```{r}
+all(ey.mat >= 5)
+```
+
+**Test statistic:** $T = \displaystyle \sum_{i = 1}^2 \sum_{j = 1}^2 \frac{(Y_{ij} - e_{ij})^2}{e_{ij}}$
+
+**Observed test statistic:** $t_0 =\displaystyle \sum_{i = 1}^2 \sum_{j = 1}^2 \frac{(y_{ij} - y_{i\bullet} y_{j\bullet}/n)^2}{y_{i\bullet}y_{j\bullet}/n} = 2.75$
+```{r}
+(t0 = sum((y.mat - ey.mat)^2 / ey.mat))
+```
+
+**P-value**: $P(T > t_0) = P(\chi^2_{3} \geq 2.75) = 0.43$
+```{r}
+(pval = pchisq(t0, 3, lower.tail = FALSE))
+```
+
+**Decision**
+
+As the p-value is greater than the level of significance ($0.43 > 0.05$), we do not reject the null and conclude that gender and concern for oral hygiene are independent.
+
+##### 4.5.1.1 Probability density function $\chi^2$ (3)
+
+```{r, fig.align='center'}
+df = (r - 1)*(c - 1)
+dist_chisq(chi2 = 2.748055, deg.f = df)
+```
+
+#### 4.5.2 One-sample t-test
+*Q. Is the mean height of female DATA2X02 different to the mean height of Australian women aged 18-24?*
+
+**Rationale**
+
+From the Australian Bureau of Statistics, the average Australian woman aged 18-24 was 163.8 cm tall ("4338.0 - Profiles of Health, Australia, 2011-13", 2020). Hence, we wish to test if the sample mean of female DATA2X02 students is statistically different to this true population mean.
+
+Let $\mu$ be the sample mean of DATA2X02 female students (in cm).
+```{r}
+women <- filter(data, gender == "Female")
+h <- women$height %>% na.omit()
+```
+
+**Hypotheses:** $H_0: \mu = 163.8$ vs $H_1: \mu \neq 163.8$
+
+**Assumptions:** $X_i$ are *iid* rv and follow $N(\mu,\sigma^2)$
+
+Checking normality of the distribution using `qqnorm` and `qqline`, we can be satisfied the female height data follows a normal distribution approximately.
+```{r, fig.align='center', fig.width=6, fig.height = 5}
+qqnorm(h)
+qqline(h)
+```
+
+
+**Test statistic:** $T =\displaystyle{ \frac{\bar X - \mu_0}{S / \sqrt{n}} }$
+
+**Observed test statistic:** $t_0 = \displaystyle{ \frac{\bar x - \mu_0}{s / \sqrt{n}}}$
+
+Calculating the observed test statistic.
+```{r}
+n = length(h)
+t0 = (mean(h) - 163.8)/(sd(h)/sqrt(n))
+t0
+```
+
+**P-value:** $2P(t_{n-1} \geq |t_0|)$
+```{r}
+pval =  2 * (1 - pt(t0, n - 1))
+pval
+```
+
+Confirming this result using `t.test`
+```{r}
+t = t.test(h, mu = 163.8)
+pander(t)
+```
+
+**Decision:** 
+
+As the p-value is greater than the level of significance ($0.43 > 0.05$), we fail to reject the null hypothesis $H_0$ and can conclude at a 5% significance level the sample mean height of DATA2X02 female students is not statistically different to the mean height of Australian women aged 18 - 24.
+
+##### 4.5.2.1 Probability density function for T ~ t(52)
+
+```{r, fig.align='center', fig.width=7}
+visualize::visualize.t(stat = c(-t$statistic, t$statistic), df = t$parameter, section = "tails")
+```
+
+#### 4.5.3 Dataset limitations
+
+As this sample was not a random sample and rather a self-selected sample, the presence of self-selection bias is likely (Section 4.2). As a result, this sample may not be representative of the population studied (Bethlehem, 2010). Additionally, issues of non-response bias impact the validity of these results as similarly this sample may not be a representative sample of the population. Therefore, limitations in sampling method influence the validity of conclusions drawn in these tests.
+
+## 5 Conclusion
+From the conducted hypothesis tests we can draw the following conclusions.
+
+* The number of COVID tests does not follow a Poisson distribution.
+* Gender and concern for oral hygiene are independent.
+* The sample mean height of DATA2X02 female students is not different to the mean height of Australian women aged 18 - 24
+
+
+## References
+4338.0 - Profiles of Health, Australia, 2011-13. (2020). Retrieved 23 September 2020, from https://www.abs.gov.au/ausstats/abs@.nsf/Lookup/4338.0main+features212011-13
+
+Balamuta J. (2020). visualize: Graph Probability Distributions with User
+  Supplied Parameters and Statistics. R package version 4.4.0.
+  https://CRAN.R-project.org/package=visualize
+
+Bethlehem, J. (2010). Selection Bias in Web Surveys. *International Statistical Review, 78*(2), 161-188. doi: 10.1111/j.1751-5823.2010.00112.x
+
+Garrett Grolemund, Hadley Wickham (2011). Dates and Times Made Easy with lubridate.
+  Journal of Statistical Software, 40(3), 1-25. URL http://www.jstatsoft.org/v40/i03/.
+  
+Gergely Daróczi and Roman Tsegelskyi (2018). pander: An R 'Pandoc' Writer. R package version 0.6.3. https://CRAN.R-project.org/package=pander
+  
+Lüdecke D (2020). _sjPlot: Data Visualization for Statistics in Social Science_. R
+package version 2.8.4, <URL: https://CRAN.R-project.org/package=sjPlot>.
+
+McLennan, W. (2020). 1331.0 - Statistics - A Powerful Edge!, 1996. Retrieved 23 September 2020, from https://www.abs.gov.au/Ausstats/abs@.nsf/0/A493A524D0C5D1A0CA2571FE007D69E2
+
+Medibank, E. (2020). Dental health issues hitting Aussie women hardest | Live Better. Retrieved 23 September 2020, from https://www.medibank.com.au/livebetter/health-brief/health-insights/dental-health-issues-hitting-aussie-women-hardest/
+
+Firke S. (2020). janitor: Simple Tools for Examining and Cleaning Dirty Data. R
+  package version 2.0.1. https://CRAN.R-project.org/package=janitor
+  
+Richard Iannone, Joe Cheng and Barret Schloerke (2020). gt: Easily Create
+  Presentation-Ready Display Tables. R package version 0.2.2.
+  https://CRAN.R-project.org/package=gt
+
+Spinu, V. (2020). lubridate package | R Documentation. Retrieved 23 September 2020, from https://www.rdocumentation.org/packages/lubridate/versions/1.7.9
+
+Tarr, G (2020). *DATA2002 Data Analytics: Learning from Data.* University of Sydney, Sydney Australia.
+
+Tierney N (2017). “visdat: Visualising Whole Data Frames.” _JOSS_, *2*(16), 355. doi:
+10.21105/joss.00355 (URL: https://doi.org/10.21105/joss.00355), <URL:
+http://dx.doi.org/10.21105/joss.00355>.
+
+Turk, A., Heneghan, C., & Nunan, D. (2020). Non-response bias. Retrieved 23 September 2020, from https://catalogofbias.org/biases/non-response-bias/
+
+Elin Waring, Michael Quinn, Amelia McNamara, Eduardo Arino de la Rubia, Hao Zhu and
+  Shannon Ellis (2020). skimr: Compact and Flexible Summaries of Data. R package version
+  2.1.2. https://CRAN.R-project.org/package=skimr
+
+Wickham, H. (2020). fct_lump function | R Documentation. Retrieved 23 September 2020, from https://www.rdocumentation.org/packages/forcats/versions/0.5.0/topics/fct_lump
+
+Wickham, H. (2020). str_sub function | R Documentation. Retrieved 23 September 2020, from              https://www.rdocumentation.org/packages/stringr/versions/1.4.0/topics/str_sub
+
+Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software,
+  4(43), 1686, https://doi.org/10.21105/joss.01686
+
