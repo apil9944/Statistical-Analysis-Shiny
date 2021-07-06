@@ -1,0 +1,175 @@
+"","timestamp","covid_test","gender","postcode","dentist","university_work","social_media","dog_or_cat","live_with_parents","exercising","eye_colour","have_asthma","paid_work","fav_season","shoe_size","height","floss_frequency","glasses_or_contacts","dominant_hand","steak_preference","stress_level"
+"1",2020-09-02 22:07:21,1,"Female","2154","Less than 6 months",38,NA,"No","Yes",0,"brown","No",0,"Winter",6,160,"Weekly","Yes","R","Medium-rare",7
+"2",2020-09-02 22:08:45,0,"Male","441000","More than 2 years",40,NA,"No","Yes",2,"black","No",0,"Autumn",42,178,"Less than once a week","No","R","Medium",9
+"3",2020-09-02 22:08:59,0,"Male","2120","Less than 6 months",3,"Facebook","No","Yes",8,"black","No",2,"Autumn",10,178,"Less than once a week","No","R","I don't eat beef",4
+"4",2020-09-02 22:09:01,5,"Male","511442","More than 2 years",40,"WeChat","No","Yes",8,"black","No",0,"Spring",45,175,"Every day","Yes","R","Medium",9
+"5",2020-09-02 22:11:07,0,"Male","2042","More than 2 years",6,"Facebook","No","Yes",5,"black","Yes",8,"Autumn",NA,NA,"Every day","Yes","R","Medium-well done",2
+"6",2020-09-02 22:12:31,0,"Male","2046","Between 12 months and 2 years",30,"Reddit","Yes","Yes",4,"green","No",10,"Autumn",12,193,"Less than once a week","Yes","R","Medium-rare",3
+"7",2020-09-02 22:14:34,0,"Male","2071","Between 6 and 12 months",36,NA,"Yes","Yes",5,"brown","Yes",10,"Spring",11,174,"Every day","No","R","Medium-well done",6
+"8",2020-09-02 22:16:17,0,"Male","2008","More than 2 years",50,"Facebook","No","No",3,"black","No",NA,"Summer",13,187,"Less than once a week","Yes","R","Medium-well done",6
+"9",2020-09-02 22:20:04,1,"Female","2118","Less than 6 months",40,"TikTok","Yes","Yes",0,"brown","No",10,"Autumn",7,165,"Less than once a week","No","R","Medium-rare",5
+"10",2020-09-02 22:31:27,0,"Male","2009","Less than 6 months",20,"Reddit","No","Yes",7,"brown","No",10,"Winter",42,176,"Less than once a week","Yes","R","Medium-rare",7
+"11",2020-09-02 22:31:51,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"12",2020-09-02 22:32:56,2,"Female","341000","Less than 6 months",50,"WeChat","No","Yes",3,"brown","Yes",0,"Autumn",5,162,"Less than once a week","Yes","R","Medium",6
+"13",2020-09-02 22:33:04,0,"Male","2195","More than 2 years",25,"Instagram","No","Yes",5,"black","No",12,"Winter",9,180,"Weekly","No","L","Well done",8
+"14",2020-09-02 22:33:20,0,"Male","2125","Between 6 and 12 months",30,"Reddit","No","Yes",2,"brown","Yes",0,"Spring",12,188,"Every day","Yes","R","I don't eat beef",6
+"15",2020-09-02 22:33:40,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"16",2020-09-02 22:35:03,0,"Female",NA,"Between 6 and 12 months",NA,NA,"No","No",5,"brown","No",0,"Autumn",36,164,"Every day","No","R","Medium-rare",4
+"17",2020-09-02 22:35:35,0,"Female","2007","Between 12 months and 2 years",20,"WeChat","Yes","No",0,"brown","No",0,"Spring",7,158,"Less than once a week","No","R","Well done",9
+"18",2020-09-02 22:42:30,0,"Male","2007","Between 12 months and 2 years",10,"Facebook","No","Yes",16,"brown","No",0,"Autumn",12,170,"Less than once a week","No","A","Medium-rare",1
+"19",2020-09-02 22:43:18,0,"Male","2144","Between 6 and 12 months",40,"Reddit","No","No",1,"brown","No",0,"Summer",255,165,"Weekly","Yes","R","Medium",4
+"20",2020-09-02 22:44:29,1,"Male","2007","Between 12 months and 2 years",20,NA,"No","Yes",0.5,"brown","No",48,"Spring",7.5,165,"Less than once a week","Yes","R","Medium-rare",10
+"21",2020-09-02 22:47:12,0,"Male","2153","Less than 6 months",25,"Twitter","No","Yes",5,"brown","No",18,"Winter",7,167,"Less than once a week","No","R","Medium-rare",6
+"22",2020-09-02 22:52:33,0,"Female","2077","Between 6 and 12 months",40,"Facebook","No","Yes",5,"brown","No",10,"Autumn",7.5,171,"Less than once a week","No","R","Medium-rare",9
+"23",2020-09-02 22:53:29,0,"Male","2765","More than 2 years",60,"Other","No","Yes",4,"black","No",10,"Spring",9,169,"Less than once a week","No","R","I don't eat beef",5
+"24",2020-09-02 22:59:14,0,"Female","2050","Between 12 months and 2 years",40,NA,"No","No",1,"Other","No",5,"Autumn",NA,NA,"Every day",NA,"R",NA,3
+"25",2020-09-02 23:00:15,1,"Male","2093","Between 12 months and 2 years",30,"Reddit","No","Yes",2,"green","No",0,"Spring",10,170,"Less than once a week","No","R","Medium-rare",2
+"26",2020-09-02 23:00:28,0,"Male","2008","Less than 6 months",40,"Facebook","Yes","No",5,"dark brown","No",0,"Spring",9.5,175,"Every day","No","R","Rare",3
+"27",2020-09-02 23:29:14,0,"Female","2042","Between 12 months and 2 years",12,"Other","Yes","No",1,"dark brown","No",0,"Spring",38,151,"Most days","No","R","Well done",4
+"28",2020-09-02 23:42:26,1,"Male","2110","Between 6 and 12 months",0,"Facebook","Yes","Yes",2,"brown","No",3,"Winter",12,180,"Weekly","No","R","Rare",0
+"29",2020-09-02 23:45:58,1,"Female","2769","Less than 6 months",30,"Instagram","No","Yes",10,"brown","No",5,"Spring",9.5,169,"Most days","Yes","R","Medium",5
+"30",2020-09-02 23:47:52,0,"Male","2007","More than 2 years",40,"Twitter","Yes","No",10,"black","No",0,"Spring",10,183,"Weekly","Yes","R","Well done",4
+"31",2020-09-03 00:18:41,3,"Female","450000","Between 6 and 12 months",30,"TikTok","Yes","Yes",14,"black","No",0,"Summer",38,163,"Every day","No","R","Medium-well done",8
+"32",2020-09-03 00:39:18,0,"Male","2135","Less than 6 months",4,"Instagram","Yes","Yes",7,"dark brown","Yes",0,"Spring",11,176,"Weekly","No","R","Medium",1
+"33",2020-09-03 00:44:19,0,"Female","2016","Between 6 and 12 months",84,"Instagram","Yes","No",3,"black","No",0,"Summer",25,174,"Every day","Yes","R","Medium-rare",7
+"34",2020-09-03 01:11:52,1,"Male","2018","Between 6 and 12 months",20,"Instagram","Yes","Yes",1,"brown","No",0,"Winter",45,170,"Weekly","Yes","R","Medium-rare",7
+"35",2020-09-03 01:31:07,1,"Male","433000","More than 2 years",40,"WeChat","No","Yes",10,"brown","No",1,"Autumn",42,183,"Weekly","Yes","R","Medium-well done",8
+"36",2020-09-03 01:42:26,0,"Male",NA,"Between 12 months and 2 years",40,"WeChat","No","Yes",8,"brown","No",0,"Autumn",42,180,NA,"Yes","R","Medium-well done",7
+"37",2020-09-03 06:53:19,2,"Male","1e+05","Less than 6 months",20,"Facebook","Yes","Yes",3,"black","No",0,"Winter",42,175,"Most days","Yes","R","Medium-rare",2
+"38",2020-09-03 07:43:10,0,"Male","2155","Between 6 and 12 months",10,"Reddit","No","Yes",4,"brown","No",8,"Spring",12,181,"Less than once a week","Yes","R","Well done",6
+"39",2020-09-03 07:48:03,0,"Male","2630","Between 12 months and 2 years",98,"Facebook","Yes","Yes",5,"brown","Yes",0,"Autumn",10,183,"Weekly","No","R","Medium-rare",7
+"40",2020-09-03 07:48:08,0,"Male","2070","Less than 6 months",35,"Reddit","Yes","Yes",0,"brown","Yes",0,"Winter",11,150,"Most days","No","R","Medium-rare",2
+"41",2020-09-03 08:02:32,0,"Male","2073","Between 12 months and 2 years",35,"Facebook","No","Yes",7,"black","No",3,"Spring",6.5,175,"Weekly","Yes","R","Medium-rare",3
+"42",2020-09-03 08:17:39,0,"Female","2137","Between 6 and 12 months",25,NA,"No","Yes",NA,"brown","No",15,"Autumn",NA,NA,"Every day","Yes","R","Medium-rare",7
+"43",2020-09-03 08:22:53,0,"Female","450000","More than 2 years",52,"WeChat","No","Yes",0,"brown","No",0,"Spring",38,160,"Less than once a week","Yes","R","Medium",9
+"44",2020-09-03 08:29:00,2,"Male","2075","Less than 6 months",25,NA,"Yes","Yes",2.5,"blue","No",8,"Autumn",10.5,174,"Weekly","Yes","R","I don't eat beef",8
+"45",2020-09-03 08:45:28,0,"Female","2121","Between 6 and 12 months",40,"Twitter","No","Yes",7,"brown","No",20,"Summer",8,160,"Weekly","No","R","Medium-rare",3
+"46",2020-09-03 08:47:48,0,"Male","2118","Less than 6 months",20,"Reddit","No","Yes",5,"brown","No",0,"Winter",10,176,"Most days","No","R","Medium-rare",6
+"47",2020-09-03 09:32:34,0,"Male","2008","Between 12 months and 2 years",40,NA,"Yes","No",5,"brown","No",10,"Winter",43,176,"Every day","Yes","R","Medium-well done",5
+"48",2020-09-03 09:51:17,0,"Female","2067","More than 2 years",25,"Instagram","No","No",3,"brown","No",1,"Spring",39,169,"Less than once a week","Yes","L","Medium-rare",6
+"49",2020-09-03 09:59:36,1,"Male",NA,"More than 2 years",15,NA,"No","Yes",5,"black","No",0,"Summer",10,180,"Every day","Yes","R","Medium-well done",5
+"50",2020-09-03 10:16:29,1,"Female","2016","Between 12 months and 2 years",39,"Instagram","No","No",1,"brown","No",0,"Autumn",6,154,"Most days","Yes","R","Medium",7
+"51",2020-09-03 10:50:04,0,"Male","2017","Between 12 months and 2 years",25,"Twitter","Yes","No",2,"black","No",25,"Summer",8,175,"Less than once a week","Yes","R","Medium-rare",8
+"52",2020-09-03 10:52:52,0,"Female",NA,"Less than 6 months",40,"TikTok","Yes","Yes",3,"blue","Yes",12,"Winter",8.5,173,"Every day","No","R","I don't eat beef",8
+"53",2020-09-03 11:26:28,0,"Female","2131","Between 12 months and 2 years",40,"Instagram","No","No",2,"brown","No",0,"Winter",38,160,"Most days","Yes","R","Medium",6
+"54",2020-09-03 11:38:33,0,"Male","2008","Between 6 and 12 months",40,"Instagram","No","No",5,"brown","No",0,"Spring",265,183,"Less than once a week","No","L","Medium-rare",2
+"55",2020-09-03 11:41:03,0,"Male","2060","Between 6 and 12 months",20,"TikTok","No","Yes",5,"brown","No",2,"Summer",11,191,"Less than once a week","No","R","Medium-rare",6
+"56",2020-09-03 12:09:38,0,"Female","2020","Between 6 and 12 months",0,"Instagram","No","No",2.5,"brown","No",10,"Autumn",36.5,158,"Less than once a week","Yes","R","Well done",6
+"57",2020-09-03 12:10:04,0,"Male","2103","Less than 6 months",40,"Other","Yes","No",7,"hazel","No",0,"Spring",11,178,"Weekly","Yes","R","Medium-rare",10
+"58",2020-09-03 12:10:08,0,"Male","2069","Less than 6 months",40,"TikTok","Yes","Yes",10,"blue","No",15,"Summer",10,178,"Less than once a week","No","R","Medium-rare",4
+"59",2020-09-03 12:10:15,0,"Male","2000","Between 6 and 12 months",10,"TikTok","Yes","No",7,"brown","No",0,"Summer",8,172,"Every day","Yes","R","Medium-well done",7
+"60",2020-09-03 12:29:20,2,"Male",NA,"Between 12 months and 2 years",35,"Other","Yes","Yes",5,"black","No",0,"Spring",13,NA,"Less than once a week","Yes","A","I don't eat beef",10
+"61",2020-09-03 12:30:21,0,"Female","2007","More than 2 years",30,"WeChat","No","No",1,"hazel","No",7,"Spring",37,158,"Weekly","Yes","R","Medium",9
+"62",2020-09-03 12:45:14,0,"Female","2768","Between 6 and 12 months",8,"Instagram","No","Yes",3,"brown","No",20,"Autumn",6.5,168,"Weekly","Yes","R","Medium-rare",9
+"63",2020-09-03 12:48:40,2,"Male","2008","Between 12 months and 2 years",24,"Instagram","No","Yes",3,"brown","No",0,"Autumn",12,186,"Every day","Yes","R","Medium-rare",4
+"64",2020-09-03 13:28:05,0,"Male","2130","More than 2 years",6,"WeChat","No","Yes",0,"black","No",0,"Summer",39,170,"Less than once a week","No","R","Medium-well done",3
+"65",2020-09-03 13:45:47,0,"Male",NA,"Between 6 and 12 months",12,NA,"No","Yes",0,"brown","No",27,"Spring",11,174,NA,"No","R","Medium-rare",NA
+"66",2020-09-03 13:48:12,1,"Female","2037","Between 6 and 12 months",30,"Instagram","Yes","No",2,"blue","No",8,"Summer",7,152,"Every day","Yes","R","Medium-rare",1
+"67",2020-09-03 14:08:19,0,"Male","2008","Between 12 months and 2 years",50,"WeChat","Yes","Yes",8,"black","No",0,"Autumn",41.5,175,"Every day","Yes","R","Medium",5
+"68",2020-09-03 14:10:18,0,"Female","2016",NA,40,"Twitter","No","Yes",NA,"dark brown","No",NA,"Winter",9,165,NA,"Yes","R","Medium-rare",7
+"69",2020-09-03 14:25:17,0,"Male",NA,"Between 6 and 12 months",0,NA,"No","Yes",NA,NA,"No",NA,"Winter",NA,NA,"Less than once a week","Yes","R","Medium-rare",8
+"70",2020-09-03 14:25:48,1,"Male","2233","Between 6 and 12 months",7,"Instagram","Yes","Yes",3,"green","No",25,"Spring",9,170,"Weekly","No","L","Medium-rare",3
+"71",2020-09-03 14:25:52,0,"Male","2120","Between 6 and 12 months",45,"Facebook","Yes","Yes",8,"blue","No",8,"Spring",8,175,"Less than once a week","No","R","Medium-rare",6
+"72",2020-09-03 14:26:09,0,"Female","2230","Between 6 and 12 months",15,"Reddit","No","Yes",4,"brown","Yes",16,"Spring",6,149.5,"Less than once a week","Yes","R","Rare",5
+"73",2020-09-03 14:26:54,0,"Female","2229","Between 6 and 12 months",25,"Instagram","Yes","Yes",4,"hazel","No",30,"Spring",9,172,"Weekly","Yes","R","Medium-well done",10
+"74",2020-09-03 14:26:59,1,"Male","2088","Less than 6 months",24,"Instagram","Yes","Yes",3,"blue","Yes",20,"Spring",12,183,"Weekly","No","R","Medium-rare",7
+"75",2020-09-03 14:27:56,1,"Female",NA,"Less than 6 months",55,"WeChat","No","Yes",3.5,"black","No",0,"Summer",37,155,"Weekly","Yes","R","Medium",7
+"76",2020-09-03 14:29:12,0,"Male","2018","Between 6 and 12 months",25,"Other","No","No",4,"black","No",0,"Summer",44.5,181,"Less than once a week","Yes","A","Medium",5
+"77",2020-09-03 14:29:16,0,"Female","2773","Between 6 and 12 months",45,"Facebook","Yes","Yes",5,"brown","No",10,"Spring",7.5,173,"Every day","No","R","Medium",4
+"78",2020-09-03 14:29:48,1,"Female",NA,"Less than 6 months",35,"WeChat","Yes","Yes",9,"black","No",0,"Summer",240,167,"Most days","Yes","R","Medium-well done",5
+"79",2020-09-03 14:30:50,0,"Female","2131","More than 2 years",50,"Instagram","No","No",1,"dark brown","No",0,"Spring",37,175,"Less than once a week","Yes","R","I don't eat beef",5
+"80",2020-09-03 14:36:18,0,"Female","2134","Between 12 months and 2 years",25,"WeChat","No","No",2,"black","No",0,"Summer",6,159,"Less than once a week","Yes","R","Medium",8
+"81",2020-09-03 14:45:55,0,"Male","3124","Less than 6 months",40,"Twitter","Yes","Yes",6,"blue","No",15,"Summer",11.5,183,"Weekly","Yes","L","Medium-rare",8
+"82",2020-09-03 15:00:11,0,"Male","2220","More than 2 years",25,NA,"No","No",0,"black","No",0,"Winter",42.5,170,"Every day","Yes","R","Medium-well done",10
+"83",2020-09-03 15:22:50,0,"Female","2020","Between 12 months and 2 years",45,NA,"Yes","No",4,"black","No",0,"Autumn",37,160,"Less than once a week","No","R","Medium-well done",7
+"84",2020-09-03 15:32:37,0,"Male","2075","Between 12 months and 2 years",20,"Facebook","No","Yes",6,"brown","No",3,"Summer",11,180,"Less than once a week","No","L","Medium-rare",4
+"85",2020-09-03 15:40:48,0,"Male","2093","Between 12 months and 2 years",40,"Other","Yes","Yes",4,"hazel","Yes",0,"Summer",11,193,"Less than once a week","No","R","Medium-rare",6
+"86",2020-09-03 15:42:37,0,"Male",NA,"Between 6 and 12 months",42,NA,"No","No",3.5,"brown","No",0,"Summer",9,183,"Less than once a week","Yes","R","Medium-well done",5
+"87",2020-09-03 15:45:23,0,"Male","2150","Between 6 and 12 months",15,"Facebook","Yes","Yes",8,"blue","No",5,"Spring",10,178,"Less than once a week","Yes","R","Medium",7
+"88",2020-09-03 15:47:18,6,"Non-binary","3151","Between 6 and 12 months",2,NA,"No","No",5,"black","No",25,"Winter",6,147,"Most days","Yes","A","Rare",5
+"89",2020-09-03 15:51:05,3,"Male","2173","Less than 6 months",170,NA,"No","No",70,"Other","Yes",70,"Summer",9,195,"Weekly","No","A","Medium",6
+"90",2020-09-03 16:20:21,0,"Male","2141","Between 12 months and 2 years",16,"Facebook","Yes","No",10,"brown","No",3,"Summer",11,179,"Less than once a week","No","R","Medium-rare",8
+"91",2020-09-03 16:46:54,0,"Male","2118","Between 6 and 12 months",0,NA,"Yes","Yes",3,"brown","Yes",6,"Autumn",9,171,"Less than once a week","Yes","L","Medium-rare",6
+"92",2020-09-03 16:47:33,1,"Male","2232","Less than 6 months",20,"Reddit","Yes","Yes",4,"green","No",10,"Spring",10,180,"Less than once a week","No","L","Medium-rare",5
+"93",2020-09-03 16:51:15,1,"Male",NA,"Less than 6 months",10,"Other","No","Yes",8,"black","No",0,"Summer",44,172,"Every day","Yes","R","Medium-well done",5
+"94",2020-09-03 16:52:48,0,"Male","2008","Between 6 and 12 months",2,"Instagram","No","No",2,"black","No",0,"Autumn",7,165,"Less than once a week","Yes","R","I don't eat beef",5
+"95",2020-09-03 16:53:57,0,"Male","2113","Between 6 and 12 months",40,"Facebook","No","Yes",1,"dark brown","No",0,"Spring",10,180,"Less than once a week","No","L","Medium",2
+"96",2020-09-03 17:13:50,0,"Male","2560","Less than 6 months",36,"Reddit","No","Yes",3.5,"brown","No",0,"Winter",8,169,"Every day","Yes","L","Medium-rare",4
+"97",2020-09-03 17:14:48,0,"Female","2113","Less than 6 months",0,"Instagram","Yes","Yes",8,"brown","No",0,"Summer",35,155,"Every day","Yes","R","Medium",10
+"98",2020-09-03 17:54:27,0,"Male","2104","Between 6 and 12 months",40,NA,"No","No",5,"hazel","Yes",20,"Spring",12,191,NA,"No","R","Medium-well done",9
+"99",2020-09-03 18:03:25,4,"Male","2042","Between 6 and 12 months",40,NA,"Yes","No",0,"Other","No",0,"Winter",29,193,"Less than once a week","No","A","Medium-well done",10
+"100",2020-09-03 18:09:43,0,"Male","2014","Between 6 and 12 months",30,"Facebook","No","Yes",7,"brown","No",0,"Autumn",8,182,"Less than once a week","No","R","Medium",8
+"101",2020-09-03 18:32:05,1,"Male","2069","Between 6 and 12 months",5,"Facebook","Yes","Yes",12,"brown","No",7,"Summer",8,175,"Weekly","No","R","Medium-rare",0
+"102",2020-09-03 19:11:51,0,"Male","2031","Between 6 and 12 months",20,"WeChat","No","No",5,"brown","No",0,"Summer",43,180,"Less than once a week","No","R","Medium-rare",5
+"103",2020-09-03 19:48:12,0,"Female","2113","Less than 6 months",0,"Instagram","Yes","Yes",8,"brown","No",0,"Summer",35,155,"Every day","Yes","R","Medium",10
+"104",2020-09-03 19:56:46,10,"Male","2131","More than 2 years",35,"Instagram","No","No",2,"black","No",4,"Summer",11,182,"Every day","No","R","Medium-well done",9
+"105",2020-09-03 20:00:18,0,"Male","2008","More than 2 years",14,"Facebook","No","No",1,"dark brown","No",0,"Spring",7,188,"Every day","Yes","R","Medium-well done",3
+"106",2020-09-03 20:22:00,0,"Male","2155","Less than 6 months",35,"Instagram","Yes","Yes",5,"brown","No",10,"Summer",10,181,"Less than once a week","Yes","R","I don't eat beef",5
+"107",2020-09-03 20:34:13,0,"Male","2769","Between 6 and 12 months",20,"Facebook","Yes","Yes",7,"black","No",9,"Summer",10,181,"Less than once a week","No","R","I don't eat beef",8
+"108",2020-09-03 20:36:06,0,"Male",NA,"Between 12 months and 2 years",2,"Instagram","No","No",7,"black","No",0,"Spring",43,175,"Every day","Yes","R","Medium-well done",5
+"109",2020-09-03 20:38:02,0,"Male","2066","Between 12 months and 2 years",30,"Facebook","Yes","Yes",8,"blue","No",8,"Summer",9,185,"Less than once a week","No","R","Medium-well done",6
+"110",2020-09-03 20:43:25,3,"Male",NA,"Between 6 and 12 months",NA,"WeChat","No","Yes",5,"black","No",0,NA,NA,NA,NA,NA,NA,NA,NA
+"111",2020-09-03 20:56:04,1,"Male","2074","Less than 6 months",15,"Instagram","Yes","Yes",5,"brown","No",24,"Winter",10,181,"Every day","No","R","Medium-rare",1
+"112",2020-09-03 21:11:39,3,"Male","432000","More than 2 years",70,NA,"Yes","Yes",21,"black","No",NA,"Winter",43,180,"Every day","Yes","R",NA,5
+"113",2020-09-03 21:50:41,0,"Male","2007","Less than 6 months",10,"WeChat","No","No",0.5,"black","No",0,"Summer",41,175,"Weekly","Yes","R","Well done",8
+"114",2020-09-03 21:51:54,0,"Male","2018","Less than 6 months",30,"WeChat","No","No",3,"black","Yes",35,"Spring",8,172,"Every day","Yes","R","Medium-rare",8
+"115",2020-09-03 22:01:40,0,"Male","2014","Between 6 and 12 months",26,"TikTok","No","Yes",4,"black","No",0,"Spring",9.5,172,"Less than once a week","Yes","R","Medium-rare",4
+"116",2020-09-03 22:31:24,0,"Male","2768","Between 12 months and 2 years",25,"Facebook","No","Yes",NA,"brown","No",20,"Spring",NA,NA,NA,"Yes","R","I don't eat beef",7
+"117",2020-09-03 22:35:03,0,"Male","2050","More than 2 years",15,"TikTok","No","No",3,"brown","No",1,"Summer",44,180,"Less than once a week","Yes","R","Well done",7
+"118",2020-09-03 22:44:49,0,"Male","2122","Between 6 and 12 months",40,"Other","Yes","Yes",6,"brown","Yes",4,"Summer",9.5,177,"Less than once a week","No","A","Medium-rare",2
+"119",2020-09-03 23:37:12,1,"Female","2073","Between 12 months and 2 years",40,"TikTok","No","Yes",2,"hazel","No",3,"Spring",8,172,"Less than once a week","Yes","R","Medium-rare",8
+"120",2020-09-03 23:40:17,3,"Male",NA,"More than 2 years",22,NA,"No","Yes",10,NA,"No",0,"Autumn",NA,NA,"Less than once a week","No","R","Medium-well done",9
+"121",2020-09-04 00:04:41,0,"Male","2131","Between 6 and 12 months",50,"Other","Yes","Yes",2,"brown","No",2,"Autumn",10.5,175,"Every day","No","R","Well done",6
+"122",2020-09-04 00:10:15,1,"Female","2067","Between 6 and 12 months",40,"Other","Yes","Yes",4,"dark brown","Yes",2,"Spring",8,164,"Less than once a week","Yes","R","Medium-rare",8
+"123",2020-09-04 00:30:00,0,"Male",NA,"Less than 6 months",20,"Other","Yes","Yes",0,"brown","Yes",20,"Winter",9,165,"Less than once a week","No","L","Medium",2
+"124",2020-09-04 08:35:02,0,"Female","2567","Between 6 and 12 months",45,NA,"No","Yes",3,"brown","No",75,"Winter",7,164,"Weekly","No","A","I don't eat beef",10
+"125",2020-09-04 09:31:35,0,"Male","2229","Between 6 and 12 months",45,"Facebook","Yes","Yes",6,"brown","No",7,"Summer",9,180,"Every day","No","R","Medium",5
+"126",2020-09-04 09:32:56,0,"Male","2072","Between 6 and 12 months",30,"Facebook","No","Yes",0,"brown","No",3,"Spring",44,178,"Less than once a week","No","R","Medium-well done",3
+"127",2020-09-04 09:48:44,0,"Male","2212","More than 2 years",50,"WeChat","No","No",5,"brown","No",0,"Autumn",40,175,"Every day","Yes","R","Medium-well done",8
+"128",2020-09-04 09:58:50,1,"Non-binary","2065","Less than 6 months",NA,NA,"Yes","Yes",1,"blue","No",4,"Winter",NA,175,"Less than once a week","No","R","Medium-well done",9
+"129",2020-09-04 10:38:55,0,"Male","2008","Between 6 and 12 months",30,"Reddit","No","Yes",5,"brown","No",0,"Winter",11,180,"Most days","Yes","R","Medium-well done",7
+"130",2020-09-04 11:13:01,0,"Male","2042","Between 6 and 12 months",20,"Instagram","Yes","No",6,"brown","No",15,"Summer",10.5,176,"Less than once a week","Yes","L","Medium-rare",9
+"131",2020-09-04 11:30:19,0,"Male","2131","More than 2 years",24,"WeChat","No","No",3,"black","Yes",0,"Winter",8.5,180,"Every day","Yes","R","Medium-rare",9
+"132",2020-09-04 11:38:28,0,"Male","2021","Between 6 and 12 months",NA,NA,"Yes","No",NA,"green","Yes",0,"Autumn",12,185,"Less than once a week","Yes","R","Rare",9
+"133",2020-09-04 11:59:51,0,"Male","2136","Less than 6 months",30,"Reddit","No","Yes",10,"blue","No",4,"Autumn",10,183,"Less than once a week","No","R","Medium-rare",3
+"134",2020-09-04 12:07:47,1,"Male",NA,"Less than 6 months",20,"Instagram","No","Yes",5,"black","No",0,"Summer",43,182,"Less than once a week","Yes","R","Well done",5
+"135",2020-09-04 12:22:18,1,"Female","2110","Between 6 and 12 months",22,"Facebook","Yes","Yes",2,"blue","No",6,"Summer",40,179,"Less than once a week","No","R","Medium-rare",4
+"136",2020-09-04 12:47:17,2,"Female","2204","Less than 6 months",50,"Instagram","Yes","No",4,"brown","Yes",21,"Spring",37,171,"Weekly","No","R","I don't eat beef",7
+"137",2020-09-04 15:17:25,1,"Male","2066","Between 6 and 12 months",30,NA,"No","Yes",8,"hazel","No",10,"Autumn",9,182,"Most days","No","R","Medium-rare",3
+"138",2020-09-04 17:47:04,0,"Male","2073","Less than 6 months",20,"Reddit","No","Yes",20,"brown","No",6,"Summer",12,182,"Less than once a week","No","R","Medium-rare",3
+"139",2020-09-04 17:59:38,2,"Male","2220","Between 6 and 12 months",30,"Facebook","No","Yes",5,"brown","Yes",0,"Summer",42.5,183,"Less than once a week","No","R","Medium-rare",7
+"140",2020-09-04 19:24:03,0,"Female","2008","Less than 6 months",35,"Reddit","No","No",0,"black","No",1,"Autumn",37,177,"Every day","Yes","R","Medium-rare",7
+"141",2020-09-04 20:06:39,0,"Male","2197","Between 12 months and 2 years",20,NA,"No","Yes",10,"brown","No",0,"Winter",12,178,"Weekly","No","R","Medium-rare",7
+"142",2020-09-04 23:50:13,0,"Female","2154","Between 6 and 12 months",15,"Instagram","No","Yes",3,"brown","No",14,"Summer",8,173,"Weekly","Yes","R","Medium",1
+"143",2020-09-05 01:43:46,1,"Male","2034","Between 12 months and 2 years",20,"Other","Yes","Yes",5,"hazel","No",20,"Autumn",10,177,"Less than once a week","No","R","Medium-rare",9
+"144",2020-09-05 14:29:37,0,"Female","2121","Between 6 and 12 months",20,NA,"Yes","No",4,"brown","No",20,"Spring",5.5,162,"Most days","No","R","Medium-rare",7
+"145",2020-09-05 14:47:31,2,"Male","2112","Between 12 months and 2 years",30,"Instagram","Yes","Yes",10,"dark brown","No",0,"Spring",9.5,170,"Weekly","Yes","L","Medium-rare",8
+"146",2020-09-05 17:13:32,0,"Female","6149","Between 6 and 12 months",20,"Instagram","Yes","No",3,"brown","No",8,"Autumn",6,158,"Less than once a week","Yes","R","Medium-rare",7
+"147",2020-09-05 20:22:00,0,"Female","2037","Between 6 and 12 months",50,"Instagram","Yes","No",7,"dark brown","No",10,"Spring",38,169,"Most days","Yes","R","Medium",7
+"148",2020-09-06 04:24:10,3,"Male","2006","More than 2 years",6,"Instagram","No","Yes",1,"brown","No",0,"Summer",44.5,178,"Less than once a week","Yes","R","Well done",10
+"149",2020-09-06 10:16:38,0,"Non-binary","2066","Less than 6 months",30,"Twitter","Yes","Yes",7,"hazel","No",0,"Winter",NA,163,"Less than once a week","Yes","R","Medium-well done",6
+"150",2020-09-06 13:09:49,0,"Female","2223","Between 12 months and 2 years",22,"Facebook","No","Yes",3,"brown","No",12,"Autumn",37,162,"Weekly","No","R","Medium-rare",7
+"151",2020-09-06 13:25:01,2,"Female","2042","Between 12 months and 2 years",6,"Facebook","No","No",0,"green","No",2,"Autumn",6,162,"Less than once a week","No","R","I don't eat beef",7
+"152",2020-09-06 14:57:10,0,"Male","2117","Between 12 months and 2 years",10,"Reddit","Yes","Yes",5,"dark brown","No",0,"Autumn",8.5,172,"Most days","No","R","Medium-rare",7
+"153",2020-09-06 15:18:28,0,"Male","2222","Between 6 and 12 months",6,NA,"Yes","Yes",0,"blue","No",2,"Winter",12,180,"Weekly","No","R","Medium-rare",4
+"154",2020-09-06 17:41:09,0,"Male","330000","Between 6 and 12 months",30,"Other","Yes","Yes",4,"black","No",0,"Autumn",43,179,"Every day","Yes","R","Rare",7
+"155",2020-09-06 18:09:22,0,"Female","2008","Between 6 and 12 months",40,"Instagram","No","No",4,"black","No",0,"Autumn",42,180,"Every day","Yes","L","Medium",6
+"156",2020-09-06 19:00:09,0,"Male","2074","Between 12 months and 2 years",34,"Twitter","Yes","Yes",4,"brown","No",0,"Summer",10.5,173,"Most days","No","R","Medium-rare",7
+"157",2020-09-06 19:53:16,0,"Male","2016","Between 12 months and 2 years",26,"WeChat","No","No",NA,"Other","No",0,NA,9,190,NA,"Yes","R","Medium-well done",6
+"158",2020-09-06 20:34:36,0,"Male","2028","Between 6 and 12 months",20,"Facebook","No","Yes",4,"brown","No",3,"Spring",10,183,"Every day","Yes","R","Medium-rare",2
+"159",2020-09-06 20:55:04,0,"Female","2008","Between 6 and 12 months",18,"Facebook","No","No",0,"brown","No",5,"Summer",9,170.5,"Less than once a week","Yes","R","Medium-rare",10
+"160",2020-09-06 21:25:09,0,"Female","2018","Between 12 months and 2 years",40,"WeChat","Yes","No",1,"black","No",0,"Spring",37,163,"Less than once a week","Yes","R","Medium-rare",9
+"161",2020-09-06 21:59:08,0,"Male","2152","Between 12 months and 2 years",20,"Reddit","No","Yes",6,"brown","No",15,"Winter",9,183,"Every day","Yes","R","Medium-rare",6
+"162",2020-09-06 22:09:09,5,"Male","2008","Less than 6 months",56,"WeChat","Yes","Yes",2,"black","No",10,"Winter",43,180,"Less than once a week","No","R","Well done",9
+"163",2020-09-07 00:00:15,0,"Male","2150","Between 6 and 12 months",35,"Reddit","No","Yes",6,"black","No",20,"Winter",9,174,"Less than once a week","Yes","R","I don't eat beef",8
+"164",2020-09-07 08:27:30,0,"Male","2107","Between 12 months and 2 years",0,"Facebook","Yes","Yes",5,"hazel","No",7,"Summer",8.5,173,"Less than once a week","No","R","Medium-rare",7
+"165",2020-09-07 10:35:43,1,"Female","2162","Between 6 and 12 months",40,"Facebook","Yes","Yes",1,"dark brown","No",3,"Summer",8,160,"Less than once a week","Yes","R","Medium-rare",7
+"166",2020-09-07 11:01:43,0,"Female","2042","Between 6 and 12 months",30,"Instagram","Yes","No",5,"dark brown","Yes",2,"Spring",7,170,"Weekly","Yes","R","I don't eat beef",9
+"167",2020-09-07 12:22:56,0,"Female","2035","Between 6 and 12 months",30,"Other","No","Yes",3,"brown","No",28,"Summer",6,173,"Weekly","No","R","I don't eat beef",7
+"168",2020-09-07 15:13:08,0,"Male","2012","Between 6 and 12 months",20,"TikTok","Yes","Yes",7,"brown","No",15,"Winter",9,175,"Less than once a week","No","R","I don't eat beef",6
+"169",2020-09-07 16:46:13,2,"Female","2040","Between 6 and 12 months",40,"Facebook","Yes","No",5,"blue","No",0,"Autumn",7.5,165,"Less than once a week","Yes","R","Medium-rare",3
+"170",2020-09-07 17:00:46,0,"Female","2017","Between 6 and 12 months",28,NA,"No","No",5,"brown","No",0,"Autumn",35,165,"Every day","No","R","Well done",9
+"171",2020-09-07 17:56:02,1,"Male","2070","Between 6 and 12 months",20,"Facebook","Yes","Yes",6,"blue","No",12,"Summer",10,180,"Less than once a week","No","R","Rare",10
+"172",2020-09-07 18:26:30,0,"Male","2000","Between 12 months and 2 years",30,"Reddit","Yes","No",2,"brown","No",2,"Winter",42.5,178,"Most days","Yes","R","Medium-well done",7
+"173",2020-09-07 20:53:54,0,"Female","2046","Less than 6 months",30,"Other","No","Yes",6,"brown","No",16,"Spring",7,164,"Weekly","Yes","R","Medium",7
+"174",2020-09-07 21:29:19,0,"Female","2018","More than 2 years",40,"WeChat","No","No",5,"black","No",0,"Summer",37,165,"Most days","No","R","Medium-well done",2
